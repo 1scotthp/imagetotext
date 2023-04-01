@@ -5,12 +5,11 @@ import openai
 import os
 from flask_cors import CORS
 
-
-
 pytesseract.pytesseract.tesseract_cmd = r'/opt/homebrew/bin/tesseract'
 openai.api_key = os.getenv("OPENAI_API_KEY", "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")
 app = Flask(__name__)
 CORS(app)
+CORS(app, resources={r"*": {"origins": ["http://localhost:3000"]}})
 
 def generate_response(extracted_text, prompt):
     full_prompt = f"{extracted_text} {prompt}"
