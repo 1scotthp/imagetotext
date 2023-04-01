@@ -7,7 +7,7 @@ from flask_cors import CORS
 
 
 
-pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = r'/opt/homebrew/bin/tesseract'
 openai.api_key = os.getenv("OPENAI_API_KEY", "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")
 app = Flask(__name__)
 CORS(app)
@@ -36,7 +36,7 @@ def ocr():
     prompt = "Can you paraphrase this in a way that is organized, and easy to understand, while mantaining all of the meaning and most of the same wording?"
     # gpt_response = generate_response(extracted_text, prompt)
 
-    return jsonify({'extracted_text': extracted_text})
+    return jsonify({'extracted_text': extracted_text}})
 
 if __name__ == '__main__':
     app.run()
