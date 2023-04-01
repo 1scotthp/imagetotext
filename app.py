@@ -6,7 +6,7 @@ import os
 from flask_cors import CORS
 
 # Set the Tesseract executable path
-pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = '/app/vendor/tesseract-ocr/bin/tesseract'
 
 openai.api_key = os.getenv("OPENAI_API_KEY", "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")
 app = Flask(__name__)
