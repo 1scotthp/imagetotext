@@ -7,7 +7,7 @@ from flask_cors import CORS
 
 
 
-pytesseract.pytesseract.tesseract_cmd = r'/opt/homebrew/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
 openai.api_key = os.getenv("OPENAI_API_KEY", "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")
 app = Flask(__name__)
 CORS(app)
